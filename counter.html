@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page View Counter</title>
+</head>
+<body>
+  <h1>Page View Counter</h1>
+  <p>This page has been visited: <strong id="counter">0</strong> times.</p>
+  <script>
+    // Check if localStorage is supported by the browser
+    if (typeof(Storage) !== "undefined") {
+      // Check if the counter has been set in localStorage
+      if (localStorage.getItem("counter")) {
+        // Retrieve the value of the counter from localStorage
+        document.getElementById("counter").innerHTML = localStorage.getItem("counter");
+        // Increment the counter by 1
+        localStorage.setItem("counter", Number(localStorage.getItem("counter")) + 1);
+      } else {
+        // Set the initial value of the counter in localStorage
+        localStorage.setItem("counter", 1);
+      }
+    } else {
+      // Local storage is not supported by the browser
+      document.getElementById("counter").innerHTML = "Sorry, your browser does not support local storage.";
+    }
+  </script>
+</body>
+</html>
