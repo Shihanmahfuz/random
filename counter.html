@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Page View Counter</title>
+  <style>
+    /* Style for monospace font */
+    .counter {
+      font-family: monospace;
+      font-size: 48px;
+      background-color: black;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-  <h1>Page View Counter</h1>
-  <p>This page has been visited: <strong id="counter">0</strong> times.</p>
-  <script>
-    // Check if localStorage is supported by the browser
-    if (typeof(Storage) !== "undefined") {
-      // Check if the counter has been set in localStorage
-      if (localStorage.getItem("counter")) {
-        // Retrieve the value of the counter from localStorage
-        document.getElementById("counter").innerHTML = localStorage.getItem("counter");
-        // Increment the counter by 1
-        localStorage.setItem("counter", Number(localStorage.getItem("counter")) + 1);
+  <p class="counter">
+    <script>
+      // Check if localStorage is supported by the browser
+      if (typeof(Storage) !== "undefined") {
+        // Check if the counter has been set in localStorage
+        if (localStorage.getItem("counter")) {
+          // Retrieve the value of the counter from localStorage
+          document.write(localStorage.getItem("counter"));
+          // Increment the counter by 1
+          localStorage.setItem("counter", Number(localStorage.getItem("counter")) + 1);
+        } else {
+          // Set the initial value of the counter in localStorage
+          localStorage.setItem("counter", 1);
+        }
       } else {
-        // Set the initial value of the counter in localStorage
-        localStorage.setItem("counter", 1);
+        // Local storage is not supported by the browser
+        document.write("Sorry, your browser does not support local storage.");
       }
-    } else {
-      // Local storage is not supported by the browser
-      document.getElementById("counter").innerHTML = "Sorry, your browser does not support local storage.";
-    }
-  </script>
+    </script>
+  </p>
 </body>
 </html>
+
