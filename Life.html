@@ -5,7 +5,7 @@
     #life-progress {
       width: 500px;
       height: 20px;
-      background-color: #ddd;
+      background-color: #FFFFFF;
       border-radius: 10px;
       position: relative;
     }
@@ -15,23 +15,22 @@
       background-color: #4CAF50;
       border-radius: 10px;
       transition: width 0.2s ease-in-out;
+      display: flex;
+      align-items: center;
     }
 
     #progress-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       font-family: monospace;
       font-size: 14px;
+      color: #000000;
     }
   </style>
 </head>
 <body>
-  <h2>Percentage of life</h2>
   <div id="life-progress">
-    <div id="progress-bar"></div>
-    <div id="progress-text"></div>
+    <div id="progress-bar">
+      <div id="progress-text">LIFE</div>
+    </div>
   </div>
 
   <script>
@@ -42,7 +41,7 @@
     const percentLived = (age / averageLifespan) * 100;
 
     document.getElementById("progress-bar").style.width = `${percentLived}%`;
-    document.getElementById("progress-text").innerHTML = `${percentLived.toFixed(2)}%`;
+    document.getElementById("progress-text").innerHTML += ` ${percentLived.toFixed(2)}%`;
   </script>
 </body>
 </html>
