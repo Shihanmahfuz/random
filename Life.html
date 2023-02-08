@@ -6,13 +6,15 @@
       width: 500px;
       height: 20px;
       background-color: #ddd;
-      text-align: center;
+      border-radius: 10px;
+      position: relative;
     }
 
     #progress-bar {
-      width: 50%;
       height: 100%;
       background-color: #4CAF50;
+      border-radius: 10px;
+      transition: width 0.2s ease-in-out;
     }
 
     #progress-text {
@@ -20,6 +22,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      font-family: monospace;
       font-size: 14px;
     }
   </style>
@@ -28,9 +31,21 @@
   <h2>Life Progress</h2>
   <div id="life-progress">
     <div id="progress-bar"></div>
-    <div id="progress-text">50%</div>
+    <div id="progress-text"></div>
   </div>
-  <p>Your birthday: 15th November, 2023</p>
+  <p>Your birthday: 15th November, 2003</p>
   <p>Average life of a man: 72 years</p>
+
+  <script>
+    const birthdate = new Date(2003, 10, 15); // 15th November, 2003
+    const averageLifespan = 72;
+    const today = new Date();
+    const age = today.getFullYear() - birthdate.getFullYear();
+    const percentLived = (age / averageLifespan) * 100;
+
+    document.getElementById("progress-bar").style.width = `${percentLived}%`;
+    document.getElementById("progress-text").innerHTML = `${percentLived.toFixed(2)}%`;
+  </script>
 </body>
 </html>
+
