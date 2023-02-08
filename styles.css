@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000000;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #000000;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: "Mono", sans-serif;
+  border-radius: 5px;
+  border: 2px solid #FFFFFF;
+  display: inline-block;
+}
