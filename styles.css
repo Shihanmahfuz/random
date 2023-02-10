@@ -9,8 +9,7 @@
   background-color: #000000;
   color: #FFFFFF;
   text-decoration: none;
-  font-family: "Mono", sans-serif;
-  font-weight: bold;
+  font-family: monospace;
   border-radius: 5px;
   border: 2px solid #FFFFFF;
   display: inline-block;
